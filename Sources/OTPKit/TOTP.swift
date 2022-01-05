@@ -54,6 +54,7 @@ public final class TOTP: OTP {
     }
     
     public required convenience init(from url: URL) throws {
+	print(url)
         guard url.scheme == "otpauth" else { throw URLDecodingError.invalidURLScheme(url.scheme) }
         guard url.host == "totp" else { throw URLDecodingError.invalidOTPType(url.host) }
         
